@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema targetNamespace="http://serviceplatformen.dk/xml/wsdl/soap11/Klassifikation/Klassifikation/1/"
+            xmlns:tns="http://serviceplatformen.dk/xml/wsdl/soap11/Klassifikation/Klassifikation/1/"
+            xmlns:callctx="http://serviceplatformen.dk/xml/schemas/CallContext/1/"
+            xmlns:authctx="http://serviceplatformen.dk/xml/schemas/AuthorityContext/1/"
+            xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+            xmlns:klasfik="urn:oio:sts:klassifikation:klassifikation:1.1.1"
+            elementFormDefault="qualified"
+            attributeFormDefault="unqualified"
+            version="1.0">
+
+    <xsd:import namespace="http://serviceplatformen.dk/xml/schemas/CallContext/1/"
+                schemaLocation="CallContext_1.xsd"/>
+
+    <xsd:import namespace="http://serviceplatformen.dk/xml/schemas/AuthorityContext/1/"
+                schemaLocation="AuthorityContext_1.xsd"/>
+
+    <xsd:import namespace="urn:oio:sts:klassifikation:klassifikation:1.1.1"
+                schemaLocation="xsd/1.1.STS-1/KlassifikationOperationer.xsd"/>
+
+    <!-- Klassifikation - Importer -->
+    <xsd:element name="KlassifikationImporterRequest" type="tns:KlassifikationImporterRequestType"/>
+    <xsd:complexType name="KlassifikationImporterRequestType">
+        <xsd:sequence>
+            <xsd:element ref="callctx:CallContext" minOccurs="0" />
+            <xsd:element ref="authctx:AuthorityContext" minOccurs="0"/>
+            <xsd:element ref="klasfik:ImportInput"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:element name="KlassifikationImporterResponse" type="tns:KlassifikationImporterResponseType"/>
+    <xsd:complexType name="KlassifikationImporterResponseType">
+        <xsd:sequence>
+            <xsd:element ref="klasfik:ImportOutput"/>
+        </xsd:sequence>
+    </xsd:complexType>
+
+    <!-- Klassifikation - Liste -->
+    <xsd:element name="KlassifikationListeRequest" type="tns:KlassifikationListeRequestType"/>
+    <xsd:complexType name="KlassifikationListeRequestType">
+        <xsd:sequence>
+            <xsd:element ref="callctx:CallContext" minOccurs="0" />
+            <xsd:element ref="authctx:AuthorityContext" minOccurs="0"/>
+            <xsd:element ref="klasfik:ListInput"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:element name="KlassifikationListeResponse" type="tns:KlassifikationListeResponseType"/>
+    <xsd:complexType name="KlassifikationListeResponseType">
+        <xsd:sequence>
+            <xsd:element ref="klasfik:ListOutput"/>
+        </xsd:sequence>
+    </xsd:complexType>
+
+    <!-- Klassifikation - Laes -->
+    <xsd:element name="KlassifikationLaesRequest" type="tns:KlassifikationLaesRequestType"/>
+    <xsd:complexType name="KlassifikationLaesRequestType">
+        <xsd:sequence>
+            <xsd:element ref="callctx:CallContext" minOccurs="0" />
+            <xsd:element ref="authctx:AuthorityContext" minOccurs="0"/>
+            <xsd:element ref="klasfik:LaesInput"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:element name="KlassifikationLaesResponse" type="tns:KlassifikationLaesResponseType"/>
+    <xsd:complexType name="KlassifikationLaesResponseType">
+        <xsd:sequence>
+            <xsd:element ref="klasfik:LaesOutput"/>
+        </xsd:sequence>
+    </xsd:complexType>
+
+    <!-- Klassifikation - Opret -->
+    <xsd:element name="KlassifikationOpretRequest" type="tns:KlassifikationOpretRequestType"/>
+    <xsd:complexType name="KlassifikationOpretRequestType">
+        <xsd:sequence>
+            <xsd:element ref="callctx:CallContext" minOccurs="0" />
+            <xsd:element ref="authctx:AuthorityContext" minOccurs="0"/>
+            <xsd:element ref="klasfik:OpretInput"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:element name="KlassifikationOpretResponse" type="tns:KlassifikationOpretResponseType"/>
+    <xsd:complexType name="KlassifikationOpretResponseType">
+        <xsd:sequence>
+            <xsd:element ref="klasfik:OpretOutput"/>
+        </xsd:sequence>
+    </xsd:complexType>
+
+    <!-- Klassifikation - Passiver -->
+    <xsd:element name="KlassifikationPassiverRequest" type="tns:KlassifikationPassiverRequestType"/>
+    <xsd:complexType name="KlassifikationPassiverRequestType">
+        <xsd:sequence>
+            <xsd:element ref="callctx:CallContext" minOccurs="0" />
+            <xsd:element ref="authctx:AuthorityContext" minOccurs="0"/>
+            <xsd:element ref="klasfik:PassiverInput"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:element name="KlassifikationPassiverResponse" type="tns:KlassifikationPassiverResponseType"/>
+    <xsd:complexType name="KlassifikationPassiverResponseType">
+        <xsd:sequence>
+            <xsd:element ref="klasfik:PassiverOutput"/>
+        </xsd:sequence>
+    </xsd:complexType>
+
+    <!-- Klassifikation - Ret -->
+    <xsd:element name="KlassifikationRetRequest" type="tns:KlassifikationRetRequestType"/>
+    <xsd:complexType name="KlassifikationRetRequestType">
+        <xsd:sequence>
+            <xsd:element ref="callctx:CallContext" minOccurs="0" />
+            <xsd:element ref="authctx:AuthorityContext" minOccurs="0"/>
+            <xsd:element ref="klasfik:RetInput"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:element name="KlassifikationRetResponse" type="tns:KlassifikationRetResponseType"/>
+    <xsd:complexType name="KlassifikationRetResponseType">
+        <xsd:sequence>
+            <xsd:element ref="klasfik:RetOutput"/>
+        </xsd:sequence>
+    </xsd:complexType>
+
+    <!-- Klassifikation - Slet -->
+    <xsd:element name="KlassifikationSletRequest" type="tns:KlassifikationSletRequestType"/>
+    <xsd:complexType name="KlassifikationSletRequestType">
+        <xsd:sequence>
+            <xsd:element ref="callctx:CallContext" minOccurs="0" />
+            <xsd:element ref="authctx:AuthorityContext" minOccurs="0"/>
+            <xsd:element ref="klasfik:SletInput"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:element name="KlassifikationSletResponse" type="tns:KlassifikationSletResponseType"/>
+    <xsd:complexType name="KlassifikationSletResponseType">
+        <xsd:sequence>
+            <xsd:element ref="klasfik:SletOutput"/>
+        </xsd:sequence>
+    </xsd:complexType>
+
+    <!-- Klassifikation - Soeg -->
+    <xsd:element name="KlassifikationSoegRequest" type="tns:KlassifikationSoegRequestType"/>
+    <xsd:complexType name="KlassifikationSoegRequestType">
+        <xsd:sequence>
+            <xsd:element ref="callctx:CallContext" minOccurs="0" />
+            <xsd:element ref="authctx:AuthorityContext" minOccurs="0"/>
+            <xsd:element ref="klasfik:SoegInput"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:element name="KlassifikationSoegResponse" type="tns:KlassifikationSoegResponseType"/>
+    <xsd:complexType name="KlassifikationSoegResponseType">
+        <xsd:sequence>
+            <xsd:element ref="klasfik:SoegOutput"/>
+        </xsd:sequence>
+    </xsd:complexType>
+
+</xsd:schema>

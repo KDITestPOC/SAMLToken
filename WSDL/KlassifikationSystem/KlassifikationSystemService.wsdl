@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions name="KlassifikationSystemService"
+				  targetNamespace="http://serviceplatformen.dk/xml/wsdl/soap11/Klassifikation/KlassifikationSystem/1/"
+                  xmlns:tns="http://serviceplatformen.dk/xml/wsdl/soap11/Klassifikation/KlassifikationSystem/1/"
+                  xmlns:spf="http://serviceplatformen.dk/xml/schemas/ServiceplatformFault/1/"
+				  xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+				  xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+				  xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+                  xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd"
+                  xmlns:wsa="http://www.w3.org/2005/08/addressing"
+                  xmlns:sp="http://docs.oasis-open.org/ws-sx/ws-securitypolicy/200702"
+                  xmlns:wsp="http://www.w3.org/ns/ws-policy">
+
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://serviceplatformen.dk/xml/wsdl/soap11/Klassifikation/KlassifikationSystem/1/">
+      <xsd:include schemaLocation="KlassifikationSystemServiceMsg.xsd"/>
+
+      <xsd:import namespace="http://serviceplatformen.dk/xml/schemas/ServiceplatformFault/1/"
+                  schemaLocation="ServiceplatformFault_1.xsd"/>
+    </xsd:schema>
+  </wsdl:types>
+
+  <wsdl:message name="FremsoegObjekthierarkiRequestMessage">
+    <wsdl:part name="request" element="tns:FremsoegObjekthierarkiRequest"/>
+  </wsdl:message>
+  <wsdl:message name="FremsoegObjekthierarkiResponseMessage">
+    <wsdl:part name="response" element="tns:FremsoegObjekthierarkiResponse"/>
+  </wsdl:message>
+  <wsdl:message name="KlassifikationsystemImportRequestMessage">
+    <wsdl:part name="request" element="tns:KlassifikationsystemImportRequest"/>
+  </wsdl:message>
+  <wsdl:message name="KlassifikationsystemImportResponseMessage">
+    <wsdl:part name="response" element="tns:KlassifikationsystemImportResponse"/>
+  </wsdl:message>
+  <wsdl:message name="KlassifikationsystemEksportRequestMessage">
+    <wsdl:part name="request" element="tns:KlassifikationsystemEksportRequest"/>
+  </wsdl:message>
+  <wsdl:message name="KlassifikationsystemEksportResponseMessage">
+    <wsdl:part name="response" element="tns:KlassifikationsystemEksportResponse"/>
+  </wsdl:message>
+  <wsdl:message name="ServiceplatformFault">
+    <wsdl:part name="error" element="spf:ServiceplatformFault"/>
+  </wsdl:message>
+
+  <wsdl:portType name="KlassifikationSystemPortType">
+    <wsdl:operation name="fremsoegobjekthierarki">
+      <wsdl:input message="tns:FremsoegObjekthierarkiRequestMessage"/>
+      <wsdl:output message="tns:FremsoegObjekthierarkiResponseMessage"/>
+      <wsdl:fault message="tns:ServiceplatformFault" name="ServiceplatformFault"/>
+    </wsdl:operation>
+    <wsdl:operation name="import">
+      <wsdl:input message="tns:KlassifikationsystemImportRequestMessage"/>
+      <wsdl:output message="tns:KlassifikationsystemImportResponseMessage"/>
+      <wsdl:fault message="tns:ServiceplatformFault" name="ServiceplatformFault"/>
+    </wsdl:operation>
+    <wsdl:operation name="eksport">
+      <wsdl:input message="tns:KlassifikationsystemEksportRequestMessage"/>
+      <wsdl:output message="tns:KlassifikationsystemEksportResponseMessage"/>
+      <wsdl:fault message="tns:ServiceplatformFault" name="ServiceplatformFault"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  
+  <wsdl:binding name="KlassifikationSystem" type="tns:KlassifikationSystemPortType">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="fremsoegobjekthierarki">
+      <soap:operation soapAction="http://kombit.dk/sts/klassifikation/klassifikationsystem/fremsoegobjekthierarki"/>
+      <wsdl:input>
+	    <!-- input policy reference -->
+        <wsp:PolicyReference URI="#Input_Policy"/>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="ServiceplatformFault"><soap:fault name="ServiceplatformFault" use="literal" /></wsdl:fault>
+    </wsdl:operation>
+
+    <wsdl:operation name="import">
+      <soap:operation soapAction="http://kombit.dk/sts/klassifikation/klassifikationsystem/import"/>
+      <wsdl:input>
+	    <!-- input policy reference -->
+        <wsp:PolicyReference URI="#Input_Policy"/>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="ServiceplatformFault"><soap:fault name="ServiceplatformFault" use="literal" /></wsdl:fault>
+    </wsdl:operation>
+
+    <wsdl:operation name="eksport">
+      <soap:operation soapAction="http://kombit.dk/sts/klassifikation/klassifikationsystem/eksport"/>
+      <wsdl:input>
+	    <!-- input policy reference -->
+        <wsp:PolicyReference URI="#Input_Policy"/>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="ServiceplatformFault"><soap:fault name="ServiceplatformFault" use="literal" /></wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <!-- Input policy for signing input -->
+  <wsp:Policy wsu:Id="Input_Policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts>
+          <sp:Body/>
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing"/>
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing"/>
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing"/>
+          <sp:Header Name="Framework" Namespace="urn:liberty:sb"/>
+        </sp:SignedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <!-- KOMBIT SAML policy -->
+  <wsp:Policy wsu:Id="STS_SAML_Token_policy">
+    <sp:SignedSupportingTokens xmlns:sp="http://docs.oasis-open.org/ws-sx/ws-securitypolicy/200702">
+      <wsp:Policy wsp:Optional="false">
+        <sp:IssuedToken sp:IncludeToken="http://docs.oasis-open.org/ws-sx/ws-securitypolicy/200702/IncludeToken/AlwaysToRecipient">
+          <!-- TODO Nedenstående Issuer address er pt. ikke rigtig idet STS endpoint ikke kendt-->
+          <sp:Issuer>
+            <wsa:Address>https://url-til-sts</wsa:Address>
+          </sp:Issuer>
+          <sp:RequestSecurityTokenTemplate>
+            <trust:TokenType xmlns:trust="http://docs.oasis-open.org/ws-sx/ws-trust/200512">urn:oasis:names:tc:SAML:2.0:assertion</trust:TokenType>
+          </sp:RequestSecurityTokenTemplate>
+        </sp:IssuedToken>
+        <sp:IncludeTimestamp/>
+        <sp:ProtectTokens />
+        <sp:OnlySignEntireHeadersAndBody/>
+      </wsp:Policy>
+    </sp:SignedSupportingTokens>
+  </wsp:Policy>
+  <!-- TLS policy for communicating with SP -->
+  <wsp:Policy wsu:Id="TLS_policy">
+    <sp:TransportBinding xmlns:sp="http://docs.oasis-open.org/ws-sx/ws-securitypolicy/200702">
+      <wsp:Policy>
+        <sp:TransportToken>
+          <wsp:Policy>
+            <sp:HttpsToken RequireClientCertificate="true"/>
+          </wsp:Policy>
+        </sp:TransportToken>
+      </wsp:Policy>
+    </sp:TransportBinding>
+  </wsp:Policy>
+  <wsdl:service name="KlassifikationSystem">
+    <wsdl:port name="KlassifikationSystem" binding="tns:KlassifikationSystem">
+ 	  <soap:address location="http://localhost:8080/service/Klassifikation/KlassifikationSystem/1"/>
+      <wsp:PolicyReference URI="#STS_SAML_Token_policy"/>
+      <wsp:PolicyReference URI="#TLS_policy"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

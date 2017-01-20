@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema targetNamespace="http://serviceplatformen.dk/xml/wsdl/soap11/Klassifikation/Facet/1/"
+            xmlns:tns="http://serviceplatformen.dk/xml/wsdl/soap11/Klassifikation/Facet/1/"
+            xmlns:callctx="http://serviceplatformen.dk/xml/schemas/CallContext/1/"
+            xmlns:authctx="http://serviceplatformen.dk/xml/schemas/AuthorityContext/1/"
+            xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+            xmlns:facet="urn:oio:sts:klassifikation:facet:1.1.1"
+            elementFormDefault="qualified"
+            attributeFormDefault="unqualified"
+            version="1.0">
+
+    <xsd:import namespace="http://serviceplatformen.dk/xml/schemas/CallContext/1/"
+                schemaLocation="CallContext_1.xsd"/>
+
+    <xsd:import namespace="http://serviceplatformen.dk/xml/schemas/AuthorityContext/1/"
+                schemaLocation="AuthorityContext_1.xsd"/>
+
+    <xsd:import namespace="urn:oio:sts:klassifikation:facet:1.1.1"
+                schemaLocation="xsd/1.1.STS-1/FacetOperationer.xsd"/>
+
+    <!-- Facet - Importer -->
+    <xsd:element name="FacetImporterRequest" type="tns:FacetImporterRequestType"/>
+    <xsd:complexType name="FacetImporterRequestType">
+        <xsd:sequence>
+            <xsd:element ref="callctx:CallContext" minOccurs="0" />
+            <xsd:element ref="authctx:AuthorityContext" minOccurs="0"/>
+            <xsd:element ref="facet:ImportInput"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:element name="FacetImporterResponse" type="tns:FacetImporterResponseType"/>
+    <xsd:complexType name="FacetImporterResponseType">
+        <xsd:sequence>
+            <xsd:element ref="facet:ImportOutput"/>
+        </xsd:sequence>
+    </xsd:complexType>
+
+    <!-- Facet - Liste -->
+    <xsd:element name="FacetListeRequest" type="tns:FacetListeRequestType"/>
+    <xsd:complexType name="FacetListeRequestType">
+        <xsd:sequence>
+            <xsd:element ref="callctx:CallContext" minOccurs="0" />
+            <xsd:element ref="authctx:AuthorityContext" minOccurs="0"/>
+            <xsd:element ref="facet:ListInput"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:element name="FacetListeResponse" type="tns:FacetListeResponseType"/>
+    <xsd:complexType name="FacetListeResponseType">
+        <xsd:sequence>
+            <xsd:element ref="facet:ListOutput"/>
+        </xsd:sequence>
+    </xsd:complexType>
+
+    <!-- Facet - Laes -->
+    <xsd:element name="FacetLaesRequest" type="tns:FacetLaesRequestType"/>
+    <xsd:complexType name="FacetLaesRequestType">
+        <xsd:sequence>
+            <xsd:element ref="callctx:CallContext" minOccurs="0" />
+            <xsd:element ref="authctx:AuthorityContext" minOccurs="0"/>
+            <xsd:element ref="facet:LaesInput"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:element name="FacetLaesResponse" type="tns:FacetLaesResponseType"/>
+    <xsd:complexType name="FacetLaesResponseType">
+        <xsd:sequence>
+            <xsd:element ref="facet:LaesOutput"/>
+        </xsd:sequence>
+    </xsd:complexType>
+
+    <!-- Facet - Opret -->
+    <xsd:element name="FacetOpretRequest" type="tns:FacetOpretRequestType"/>
+    <xsd:complexType name="FacetOpretRequestType">
+        <xsd:sequence>
+            <xsd:element ref="callctx:CallContext" minOccurs="0" />
+            <xsd:element ref="authctx:AuthorityContext" minOccurs="0"/>
+            <xsd:element ref="facet:OpretInput"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:element name="FacetOpretResponse" type="tns:FacetOpretResponseType"/>
+    <xsd:complexType name="FacetOpretResponseType">
+        <xsd:sequence>
+            <xsd:element ref="facet:OpretOutput"/>
+        </xsd:sequence>
+    </xsd:complexType>
+
+    <!-- Facet - Passiver -->
+    <xsd:element name="FacetPassiverRequest" type="tns:FacetPassiverRequestType"/>
+    <xsd:complexType name="FacetPassiverRequestType">
+        <xsd:sequence>
+            <xsd:element ref="callctx:CallContext" minOccurs="0" />
+            <xsd:element ref="authctx:AuthorityContext" minOccurs="0"/>
+            <xsd:element ref="facet:PassiverInput"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:element name="FacetPassiverResponse" type="tns:FacetPassiverResponseType"/>
+    <xsd:complexType name="FacetPassiverResponseType">
+        <xsd:sequence>
+            <xsd:element ref="facet:PassiverOutput"/>
+        </xsd:sequence>
+    </xsd:complexType>
+
+    <!-- Facet - Ret -->
+    <xsd:element name="FacetRetRequest" type="tns:FacetRetRequestType"/>
+    <xsd:complexType name="FacetRetRequestType">
+        <xsd:sequence>
+            <xsd:element ref="callctx:CallContext" minOccurs="0" />
+            <xsd:element ref="authctx:AuthorityContext" minOccurs="0"/>
+            <xsd:element ref="facet:RetInput"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:element name="FacetRetResponse" type="tns:FacetRetResponseType"/>
+    <xsd:complexType name="FacetRetResponseType">
+        <xsd:sequence>
+            <xsd:element ref="facet:RetOutput"/>
+        </xsd:sequence>
+    </xsd:complexType>
+
+    <!-- Facet - Slet -->
+    <xsd:element name="FacetSletRequest" type="tns:FacetSletRequestType"/>
+    <xsd:complexType name="FacetSletRequestType">
+        <xsd:sequence>
+            <xsd:element ref="callctx:CallContext" minOccurs="0" />
+            <xsd:element ref="authctx:AuthorityContext" minOccurs="0"/>
+            <xsd:element ref="facet:SletInput"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:element name="FacetSletResponse" type="tns:FacetSletResponseType"/>
+    <xsd:complexType name="FacetSletResponseType">
+        <xsd:sequence>
+            <xsd:element ref="facet:SletOutput"/>
+        </xsd:sequence>
+    </xsd:complexType>
+
+    <!-- Facet - Soeg -->
+    <xsd:element name="FacetSoegRequest" type="tns:FacetSoegRequestType"/>
+    <xsd:complexType name="FacetSoegRequestType">
+        <xsd:sequence>
+            <xsd:element ref="callctx:CallContext" minOccurs="0" />
+            <xsd:element ref="authctx:AuthorityContext" minOccurs="0"/>
+            <xsd:element ref="facet:SoegInput"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:element name="FacetSoegResponse" type="tns:FacetSoegResponseType"/>
+    <xsd:complexType name="FacetSoegResponseType">
+        <xsd:sequence>
+            <xsd:element ref="facet:SoegOutput"/>
+        </xsd:sequence>
+    </xsd:complexType>
+
+</xsd:schema>

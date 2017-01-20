@@ -1,0 +1,20 @@
+#Fri Jan 20 10:36:54 CET 2017
+.datasources/ds-module.wk\:///Klassifikation/Facet.tst\#0000000000\#0000000002/datasources=ds_-574129804_1484829756176_1638168666
+.datasources/ds-module.wk\:///Klassifikation/Facet.tst\#0000000000\#0000000002/ds_-574129804_1484829756176_1638168666.closeconn=true
+.datasources/ds-module.wk\:///Klassifikation/Facet.tst\#0000000000\#0000000002/ds_-574129804_1484829756176_1638168666.first_row=0
+.datasources/ds-module.wk\:///Klassifikation/Facet.tst\#0000000000\#0000000002/ds_-574129804_1484829756176_1638168666.first_row.internal=1
+.datasources/ds-module.wk\:///Klassifikation/Facet.tst\#0000000000\#0000000002/ds_-574129804_1484829756176_1638168666.last_row=0
+.datasources/ds-module.wk\:///Klassifikation/Facet.tst\#0000000000\#0000000002/ds_-574129804_1484829756176_1638168666.last_row.internal=1
+.datasources/ds-module.wk\:///Klassifikation/Facet.tst\#0000000000\#0000000002/ds_-574129804_1484829756176_1638168666.name=Tokensource
+.datasources/ds-module.wk\:///Klassifikation/Facet.tst\#0000000000\#0000000002/ds_-574129804_1484829756176_1638168666.table_columns_size=26
+.datasources/ds-module.wk\:///Klassifikation/Facet.tst\#0000000000\#0000000002/ds_-574129804_1484829756176_1638168666.table_contain_header=true
+.datasources/ds-module.wk\:///Klassifikation/Facet.tst\#0000000000\#0000000002/ds_-574129804_1484829756176_1638168666.table_content_0_0=Service
+.datasources/ds-module.wk\:///Klassifikation/Facet.tst\#0000000000\#0000000002/ds_-574129804_1484829756176_1638168666.table_content_0_1=Municipality
+.datasources/ds-module.wk\:///Klassifikation/Facet.tst\#0000000000\#0000000002/ds_-574129804_1484829756176_1638168666.table_content_0_2=TokenFileName
+.datasources/ds-module.wk\:///Klassifikation/Facet.tst\#0000000000\#0000000002/ds_-574129804_1484829756176_1638168666.table_content_1_0=http\://Klassifikation.prod-serviceplatformen.dk/service/Facet/1
+.datasources/ds-module.wk\:///Klassifikation/Facet.tst\#0000000000\#0000000002/ds_-574129804_1484829756176_1638168666.table_content_1_1=55133018
+.datasources/ds-module.wk\:///Klassifikation/Facet.tst\#0000000000\#0000000002/ds_-574129804_1484829756176_1638168666.table_content_1_2=C\:\\Users\\Public\\workspace\\Klassifikation\\Tokens\\Facet\\token_55133018.xml
+.datasources/ds-module.wk\:///Klassifikation/Facet.tst\#0000000000\#0000000002/ds_-574129804_1484829756176_1638168666.table_rows_size=100
+.datasources/ds-module.wk\:///Klassifikation/Facet.tst\#0000000000\#0000000002/ds_-574129804_1484829756176_1638168666.type=Table
+.datasources/ds-module.wk\:///Klassifikation/Facet.tst\#0000000000\#0000000002/ds_-574129804_1484829756176_1638168666.use_all_rows=true
+project.path=/Klassifikation

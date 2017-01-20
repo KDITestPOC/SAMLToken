@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema targetNamespace="http://serviceplatformen.dk/xml/wsdl/soap11/Klassifikation/KlassifikationSystem/1/"
+            xmlns:tns="http://serviceplatformen.dk/xml/wsdl/soap11/Klassifikation/KlassifikationSystem/1/"
+            xmlns:callctx="http://serviceplatformen.dk/xml/schemas/CallContext/1/"
+            xmlns:authctx="http://serviceplatformen.dk/xml/schemas/AuthorityContext/1/"
+            xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+            xmlns:sts="urn:oio:sts:klassifikation:klassifikationsystem:1.1.1"
+            elementFormDefault="qualified"
+            attributeFormDefault="unqualified"
+            version="1.0">
+
+    <xsd:import namespace="http://serviceplatformen.dk/xml/schemas/CallContext/1/"
+                schemaLocation="CallContext_1.xsd"/>
+
+    <xsd:import namespace="http://serviceplatformen.dk/xml/schemas/AuthorityContext/1/"
+                schemaLocation="AuthorityContext_1.xsd"/>
+
+    <xsd:import namespace="urn:oio:sts:klassifikation:klassifikationsystem:1.1.1"
+                schemaLocation="xsd/1.1.STS-1/KlassifikationSystemOperationer.xsd"/>
+
+    <!-- Klassifikationsystem - Import -->
+    <xsd:element name="KlassifikationsystemImportRequest" type="tns:KlassifikationsystemImportRequestType"/>
+    <xsd:complexType name="KlassifikationsystemImportRequestType">
+        <xsd:sequence>
+            <xsd:element ref="callctx:CallContext" minOccurs="0" />
+            <xsd:element ref="authctx:AuthorityContext" minOccurs="0"/>
+            <xsd:element ref="sts:ImporterKlassifikationSystemInput"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:element name="KlassifikationsystemImportResponse" type="tns:KlassifikationsystemImportResponseType"/>
+    <xsd:complexType name="KlassifikationsystemImportResponseType">
+        <xsd:sequence>
+            <xsd:element ref="sts:ImporterKlassifikationSystemOutput"/>
+        </xsd:sequence>
+    </xsd:complexType>
+
+    <!-- Klassifikationsystem - Eksport -->
+    <xsd:element name="KlassifikationsystemEksportRequest" type="tns:KlassifikationsystemEksportRequestType"/>
+    <xsd:complexType name="KlassifikationsystemEksportRequestType">
+        <xsd:sequence>
+            <xsd:element ref="callctx:CallContext" minOccurs="0" />
+            <xsd:element ref="authctx:AuthorityContext" minOccurs="0"/>
+            <xsd:element ref="sts:EksporterKlassifikationSystemInput"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:element name="KlassifikationsystemEksportResponse" type="tns:KlassifikationsystemEksportResponseType"/>
+    <xsd:complexType name="KlassifikationsystemEksportResponseType">
+        <xsd:sequence>
+            <xsd:element ref="sts:EksporterKlassifikationSystemOutput"/>
+        </xsd:sequence>
+    </xsd:complexType>
+
+    <!-- Klassifikationsystem - FremosoegObjekthieraki -->
+    <xsd:element name="FremsoegObjekthierarkiRequest" type="tns:FremsoegObjekthierarkiRequestType"/>
+    <xsd:complexType name="FremsoegObjekthierarkiRequestType">
+        <xsd:sequence>
+            <xsd:element ref="callctx:CallContext" minOccurs="0" />
+            <xsd:element ref="authctx:AuthorityContext" minOccurs="0"/>
+            <xsd:element ref="sts:FremsoegObjekthierarkiInput"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:element name="FremsoegObjekthierarkiResponse" type="tns:FremsoegObjekthierarkiResponseType"/>
+    <xsd:complexType name="FremsoegObjekthierarkiResponseType">
+        <xsd:sequence>
+            <xsd:element ref="sts:FremsoegObjekthierarkiOutput"/>
+        </xsd:sequence>
+    </xsd:complexType>
+
+</xsd:schema>
